@@ -1,0 +1,30 @@
+.range-slide-root{
+    /* margin-left: 20px; */
+    /* width: 95% !important;
+    align-items: center; */
+    position: relative;
+
+    width: 99%;
+}
+
+.ruler{
+    margin-top : 10px;
+    margin-bottom: 10px;
+    width: 99%;
+    height: 10px;
+    background-color: aquamarine;
+    border-radius: 25px;
+    margin-left: 10px;
+}
+.point{
+    margin-top : -3px;
+    margin-bottom: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background-color: brown;
+    position: absolute;
+    cursor: pointer;
+    
+}
+
