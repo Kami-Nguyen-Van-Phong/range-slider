@@ -31,6 +31,31 @@ export class RangeSlide extends Component {
             });
         }
     }
+
+    handleWindowResize = () => {
+        //Lấy độ dài màn hình hiện tại
+        const sliderWidth = document.getElementById("ruler").offsetWidth;
+        // Lấy giá trị max, min của slider
+        const maxSlider = this.props.max;
+        const minSlider = this.props.min;
+        //Lấy giá trị hiện tại của con trỏ
+        const currentValue = this.props.values.value;
+        
+        const point = (currentValue - minSlider) * (sliderWidth / (maxSlider - minSlider))
+        this.setState({
+            point
+        });
+
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.handleWindowResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.handleWindowResize);
+    }
+
     handleSliderChange = (event) => {
         // this.props.value.setValue(newValue);
         const numberOfButton = this.props.max - this.props.min;
